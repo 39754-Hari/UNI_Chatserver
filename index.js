@@ -186,7 +186,7 @@ app.post("/optyfulfillment", async function (req, res) {
   console.log(JSON.stringify(req.body));
 
   console.log('Inside Opty API');
-  let intentFrom = req.body.result.action;
+  let intentFrom = req.body.queryResult.action;
   var objData = null;
   var type = null;
   var smsType = null;
