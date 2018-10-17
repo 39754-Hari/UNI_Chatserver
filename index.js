@@ -241,7 +241,7 @@ app.post("/optyfulfillment", async function (req, res) {
 
     return res.json(msg);
   } else if (intentFrom === 'scholorshipSearch') {
-
+  console.log('intentFrom',intentFrom)
     msg = {
       "speech": "",
       "displayText": "",
