@@ -266,6 +266,7 @@ app.post("/optyfulfillment", async function (req, res) {
         }
       }]
     };
+    console.log('msg',msg)
     return res.json(msg);
   } else if (intentFrom == "TweetFeedDetails") {
     console.log('```````Session ID`````````', req.body.sessionId);
