@@ -240,7 +240,7 @@ app.post("/optyfulfillment", async function (req, res) {
     };
 
     return res.json(msg);
-  } else if (intentFrom === 'scholorshipSearch') {
+  } else if (intentFrom === 'scholarshipSearch') {
   console.log('intentFrom',intentFrom)
     msg = {
       "speech": "",
