@@ -183,7 +183,7 @@ let line1 = "52, Scenic Road";
 let line2 = "SUMMER ISLAND, NSW 2440";
 let line3 = "Australia";
 app.post("/optyfulfillment", async function (req, res) {
-  console.log(JSON.stringify(req.body.result.action));
+  console.log(JSON.stringify(req.body));
 
   console.log('Inside Opty API');
   let intentFrom = req.body.result.action;
