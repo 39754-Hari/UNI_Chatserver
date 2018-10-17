@@ -240,7 +240,7 @@ app.post("/optyfulfillment", async function (req, res) {
     };
 
     return res.json(msg);
-  } else if (intentFrom === 'RoamingFAQ') {
+  } else if (intentFrom === 'scholorshipSearch') {
 
     msg = {
       "speech": "",
