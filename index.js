@@ -268,7 +268,36 @@ app.post("/optyfulfillment", async function (req, res) {
     };
     console.log('msg',JSON.stringify(msg))
     return res.json(msg);
-  } else if (intentFrom == "TweetFeedDetails") {
+  } else if (intentFrom === 'existingStudent') {
+    console.log('intentFrom',intentFrom)
+      msg = {
+        "speech": "123",
+        "displayText": "",
+        "messages": [{
+          "type": 4,
+          "platform": "facebook",
+          "payload": {
+            "facebook": {
+              "text": `Please login in and chat with me by saying “Find or Apply Scholarship”`,
+              "quick_replies": [{
+                  "content_type": "text",
+                  "title": "Yes",
+                  "payload": "Yes"
+                },
+                {
+                  "content_type": "text",
+                  "title": "No",
+                  "payload": "No"
+                }
+              ]
+            }
+          }
+        }]
+      };
+      console.log('msg',JSON.stringify(msg))
+      return res.json(msg);
+    }
+    else if (intentFrom == "TweetFeedDetails") {
     console.log('```````Session ID`````````', req.body.sessionId);
     commonFiles.writeIncompleteTran(req.body.sessionId, true, "Roaming", function (err, data) {
       if (err) {
