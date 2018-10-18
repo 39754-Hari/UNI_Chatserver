@@ -243,14 +243,14 @@ app.post("/optyfulfillment", async function (req, res) {
   } else if (intentFrom === 'scholarshipSearch') {
   console.log('intentFrom',intentFrom)
     msg = {
-      "speech": "",
+      "speech": "123",
       "displayText": "",
       "messages": [{
         "type": 4,
         "platform": "facebook",
         "payload": {
           "facebook": {
-            "text": `${resp} I’m Opty, the Skytel bot. Looks like you are interested in knowing about our roaming plans. Do you have a question?`,
+            "text": `${resp} I see that you are looking at scholarship information for UWW.  Can I help you?`,
             "quick_replies": [{
                 "content_type": "text",
                 "title": "Yes",
