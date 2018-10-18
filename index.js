@@ -250,7 +250,7 @@ app.post("/optyfulfillment", async function (req, res) {
         "platform": "facebook",
         "payload": {
           "facebook": {
-            "text": `${resp} I see that you are looking at scholarship information for UWW.  Can I help you?`,
+            "text": `Hey there, ${resp}. I see that you are looking at scholarship information for UWW.  Can I help you?`,
             "quick_replies": [{
                 "content_type": "text",
                 "title": "Yes",
