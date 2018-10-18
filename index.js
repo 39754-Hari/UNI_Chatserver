@@ -278,18 +278,7 @@ app.post("/optyfulfillment", async function (req, res) {
           "platform": "facebook",
           "payload": {
             "facebook": {
-              "text": `Please login in and chat with me by saying “Find or Apply Scholarship”`,
-              "quick_replies": [{
-                  "content_type": "text",
-                  "title": "Yes",
-                  "payload": "Yes"
-                },
-                {
-                  "content_type": "text",
-                  "title": "No",
-                  "payload": "No"
-                }
-              ]
+              "text": `Please login in and chat with me by saying “Find or Apply Scholarship”`              
             }
           }
         }]
