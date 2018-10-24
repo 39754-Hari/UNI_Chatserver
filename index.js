@@ -192,10 +192,10 @@ app.post('/button', (req, res) => {
 
 //To handle the request from the Dialogflow
 function handleRequest(req, res, platform) {
-    console.log("Inside the handleFacebook");
+    console.log("Inside the ",platform);
     let source = require('./' + platform);
-    const assistant = new DialogflowApp({ request: req, response: res });
-    if (req.body.result.action === 'input.welcome') {
+    //const assistant = new DialogflowApp({ request: req, response: res });
+    if (req.body.queryResult.action === 'input.welcome') {
         console.log('Inside welcome intent',req.user);
         userData = {};
         if (platform == 'google') {
@@ -203,13 +203,13 @@ function handleRequest(req, res, platform) {
         } else {
             return res.json(source.welcomeIntent());
         }
-    } else if (req.body.result.action === 'scholarshipMain') {
+    } else if (req.body.queryResult.action === 'scholarshipMain') {
         if (platform == 'google') {
             source.incidentCategory(assistant);
         } else {
             return res.json(source.incidentCategory());
         }
-    } else if (req.body.result.action === 'ApplyScholarship-yes') {
+    } else if (req.body.queryResult.action === 'ApplyScholarship-yes') {
         userData = {};
         userData.category = req.body.result.parameters["incidentCategory"];
         if (platform == 'google') {
@@ -217,7 +217,7 @@ function handleRequest(req, res, platform) {
         } else {
             return res.json(source.incidentSubCategory(userData.category.toLowerCase()));
         }
-    } else if (req.body.result.action === 'ApplyScholarship-yes.confirmation') {
+    } else if (req.body.queryResult.action === 'ApplyScholarship-yes.confirmation') {
         console.log('--Incident options trigger-- ');
         userData.subCategory = assistant.getSelectedOption();
         let options = {
@@ -225,9 +225,9 @@ function handleRequest(req, res, platform) {
             "data": {}
         };
         return res.json(source.triggerEvent(assistant, '', options));
-    } else if (req.body.result.action === 'ApplyScholarship-yes.confirmation-yes') {
+    } else if (req.body.queryResult.action === 'ApplyScholarship-yes.confirmation-yes') {
         console.log('Other than the given option is selected ');
-    } else if (req.body.result.action === 'ApplyScholarship-yes.confirmation-no') {
+    } else if (req.body.queryResult.action === 'ApplyScholarship-yes.confirmation-no') {
         userData.description = req.body.result.parameters["description"];
         userData.subCategory = req.body.result.parameters["subcategory"];
         if (typeof userData.category == "undefined") {
