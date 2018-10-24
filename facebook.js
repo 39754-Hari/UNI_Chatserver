@@ -1,3 +1,4 @@
+var moment = require('moment-timezone');
 //To handle the responses for facebook
 var facebook = {
     //To send the welcome message for the bot as the card
