@@ -4,10 +4,10 @@ var facebook = {
     //"url": "https://report-it.auth0.com/login?client=4hm1dkhFoPFwBkCHYdvHqD2uAMtWdsKK"
     //"url": "https://report-incident-bot.herokuapp.com/login"
     welcomeIntent: function () {
-        var msg = WelcomeMsg();
+        var msg = welcomeMsg();
 		return {
             speech: '',
-            displayText: msg+"< Ms. Margaux>. "+" I’m Uni, your online campus buddy. How can I help you?",
+            displayText: msg+" Ms. Margaux. "+" I’m Uni, your online campus buddy. How can I help you?",
             data: {
                 "facebook": {
                     "text": "Please select any one category",
