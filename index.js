@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 const express = require('express'),
     bodyParser = require('body-parser'),
@@ -196,7 +196,7 @@ function handleRequest(req, res, platform) {
     let source = require('./' + platform);
     const assistant = new DialogflowApp({ request: req, response: res });
     if (req.body.result.action === 'input.welcome') {
-        console.log('Inside welcome intent');
+        console.log('Inside welcome intent',req.user);
         userData = {};
         if (platform == 'google') {
             source.welcomeIntent(assistant);
