@@ -99,7 +99,7 @@ app.get('/login', function (req, res) {
 });
 
 app.get('/scholarship', function (req, res) {
-        res.sendFile(__dirname + '/scholarship.html');
+        res.sendFile(__dirname + '/Home.html');
 });
 
 
